@@ -1,0 +1,13 @@
+# Secrets: never bake these into the image
+.env
+
+# Python and editor clutter
+__pycache__/
+*.pyc
+.claude/
+.vscode/
+.git/
+
+# Docker files themselves
+Dockerfile
+.dockerignore
