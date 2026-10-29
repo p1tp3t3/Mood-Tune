@@ -51,9 +51,3 @@ class MoodDetection:
         total = sum(scores.values())
         scores = {mood: score / total for mood, score in scores.items()}
         return dict(sorted(scores.items(), key=lambda item: item[1], reverse=True))
-
-
-if __name__ == '__main__':
-    detector = MoodDetection()
-    for sample in ["I just got the job, I can't believe it!", "I miss her so much", "ugh this traffic is making me furious"]:
-        print(sample, '->', detector.detect_mood(sample))

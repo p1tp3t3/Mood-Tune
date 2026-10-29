@@ -143,12 +143,3 @@ class MusicRecommender:
             return response.json().get('thumbnail_url')
         except (requests.RequestException, ValueError):
             return None
-
-
-if __name__ == '__main__':
-    recommender = MusicRecommender()
-    print(f'{len(recommender.tracks)} tracks loaded')
-    for mood in ['happiness', 'sadness', 'anger']:
-        print(f'\n{mood}:')
-        for track in recommender.recommend_music(mood, n=5):
-            print(f"  {track['track_name']} - {track['artists']} [{track['album_name']}] {track['embed_url']}")
